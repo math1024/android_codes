@@ -1,37 +1,56 @@
 package com.android.lyc.ui.main
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.android.lyc.R
+import com.android.lyc.databinding.MyBinding
+import com.android.lyc.ui.databind.DataBindingActivity
 
-class MainFragment : Fragment() {
+class MainFragment : Fragment(), View.OnClickListener {
 
     companion object {
         fun newInstance() = MainFragment()
     }
 
-    private lateinit var binding: ViewDataBinding
+    private lateinit var binding: MyBinding
     private lateinit var viewModel: MainViewModel
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View {
-//        binding = DataBindingUtil.setContentView(this, R.layout.main_fragment)
-//        DataBindingUtil.inflate<>(inflater, R.layout.main_fragment, container,false)
+    /**
+     *  if not use DataBinding return inflater.inflate(R.layout.main_fragment, container, false)
+     */
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.main_fragment, container, false)
+        binding.setDataBindingBtn("Go DataBindingActivity")
+        binding.nextBtn = "next function"
+        binding.onClickListener = this
         return binding.root
-//        return inflater.inflate(R.layout.main_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
+    }
+
+    override fun onClick(view: View?) {
+        when (view?.id) {
+            R.id.data_binding_btn -> startActivity(
+                Intent(activity, DataBindingActivity::class.java)
+            )
+            R.id.next_func_btn -> {
+                Toast.makeText(context, "next_func_btn", Toast.LENGTH_SHORT).show()
+            }
+
+        }
     }
 
 }
