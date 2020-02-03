@@ -25,10 +25,11 @@ class DataBindingActivity:AppCompatActivity (), View.OnClickListener {
 
         binding.title = "Data Binding Example"
         binding.func1 = "1. text & click"
+        binding.func2 = "2. model binding"
         binding.onClickListener = this
 
         var model = UserModel("user1", 10)
-        var bean = com.android.lyc.bean.UserModel("HelleWorld")
+        var bean = com.android.lyc.bean.UserModel("HelloWorld")
         binding.data1 = model
         binding.data2 = bean
     }
