@@ -34,6 +34,11 @@
         <variable
             name="data2"
             type="userBean" />
+
+        <variable
+            name="people"
+            type="com.android.lyc.model.PeopleModel" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -97,6 +102,18 @@
             app:layout_constraintStart_toStartOf="parent"
             android:text="@{data2.name,default=HelleWorld}"
             app:layout_constraintTop_toBottomOf="@id/text_1_tv"/>
+
+        <TextView
+            android:id="@+id/text_3_tv"
+            android:layout_width="match_parent"
+            android:textSize="16dp"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="@{people.firstName}"
+            app:layout_constraintTop_toBottomOf="@id/text_2_tv"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

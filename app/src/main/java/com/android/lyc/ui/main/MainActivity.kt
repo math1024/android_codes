@@ -1,8 +1,8 @@
-package com.android.lyc
+package com.android.lyc.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.android.lyc.ui.main.MainFragment
+import com.android.lyc.R
 
 class MainActivity : AppCompatActivity() {
 

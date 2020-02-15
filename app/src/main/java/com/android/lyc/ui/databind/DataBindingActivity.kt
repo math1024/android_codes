@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.android.lyc.R
 import com.android.lyc.databinding.DataBingActivityBinding
+import com.android.lyc.model.PeopleModel
 import com.android.lyc.model.UserModel
 import com.android.lyc.util.ClickUtil
 
@@ -32,6 +33,9 @@ class DataBindingActivity:AppCompatActivity (), View.OnClickListener {
         var bean = com.android.lyc.bean.UserModel("HelloWorld")
         binding.data1 = model
         binding.data2 = bean
+        var peopleModel = PeopleModel()
+//        peopleModel.age = 10
+        binding.people = peopleModel
     }
 
     override fun onClick(view: View?) {
