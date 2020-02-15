@@ -45,6 +45,10 @@ class DataBindingActivity:AppCompatActivity (), View.OnClickListener {
                 binding.func1 = "clicked"
             }
 
+            R.id.fun2_btn -> {
+                binding.text3Tv.text = "clicked II"
+            }
+
         }
     }
 }
