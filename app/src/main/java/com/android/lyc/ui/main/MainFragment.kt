@@ -5,12 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.android.lyc.R
 import com.android.lyc.databinding.MyBinding
+import com.android.lyc.ui.chronometer.ChronometerActivity
 import com.android.lyc.ui.databind.DataBindingActivity
 
 class MainFragment : Fragment(), View.OnClickListener {
@@ -31,7 +31,7 @@ class MainFragment : Fragment(), View.OnClickListener {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.main_fragment, container, false)
         binding.setDataBindingBtn("Go DataBindingActivity")
-        binding.nextBtn = "next function"
+        binding.nextBtn = "LifeCycle ViewModel"
         binding.onClickListener = this
         return binding.root
     }
@@ -47,7 +47,8 @@ class MainFragment : Fragment(), View.OnClickListener {
                 Intent(activity, DataBindingActivity::class.java)
             )
             R.id.next_func_btn -> {
-                Toast.makeText(context, "next_func_btn", Toast.LENGTH_SHORT).show()
+                startActivity(
+                    Intent(activity, ChronometerActivity::class.java))
             }
 
         }

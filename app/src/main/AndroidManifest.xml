@@ -19,6 +19,8 @@
 
         <activity android:name=".ui.databind.DataBindingActivity"
             android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.chronometer.ChronometerActivity"/>
     </application>
 
 </manifest>
