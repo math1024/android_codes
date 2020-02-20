@@ -32,8 +32,8 @@
         android:layout_height="wrap_content"
         android:text="start"
         app:layout_constraintEnd_toStartOf="@+id/chronometer_end"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/chronometer_test" />
 
     <Button
@@ -42,9 +42,17 @@
         android:layout_height="wrap_content"
         android:text="end"
 
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/chronometer_start"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/chronometer_test" />
+
+    <Button
+        android:id="@+id/chronometer_reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="reset"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@id/chronometer_start" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
