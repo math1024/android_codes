@@ -26,6 +26,7 @@
         <activity android:name=".ui.chronometer.ChronometerActivity"/>
 
         <activity android:name=".ui.lifecycle.LifeCycleActivity"/>
+        <activity android:name=".ui.vmsync.VmSyncActivity"/>
     </application>
 
 </manifest>
