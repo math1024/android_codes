@@ -12,6 +12,7 @@ import com.android.lyc.R
 import com.android.lyc.databinding.MyBinding
 import com.android.lyc.ui.chronometer.ChronometerActivity
 import com.android.lyc.ui.databind.DataBindingActivity
+import com.android.lyc.ui.lifecycle.LifeCycleActivity
 
 class MainFragment : Fragment(), View.OnClickListener {
 
@@ -31,7 +32,8 @@ class MainFragment : Fragment(), View.OnClickListener {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.main_fragment, container, false)
         binding.setDataBindingBtn("Go DataBindingActivity")
-        binding.nextBtn = "LifeCycle ViewModel"
+        binding.nextBtn = "LiveData ViewModel"
+        binding.lifeCycleBtn.text = "Life Cycle"
         binding.onClickListener = this
         return binding.root
     }
@@ -43,12 +45,13 @@ class MainFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(view: View?) {
         when (view?.id) {
-            R.id.data_binding_btn -> startActivity(
-                Intent(activity, DataBindingActivity::class.java)
+            R.id.data_binding_btn -> startActivity(Intent(activity, DataBindingActivity::class.java)
             )
-            R.id.next_func_btn -> {
-                startActivity(
-                    Intent(activity, ChronometerActivity::class.java))
+            R.id.live_data_btn -> {
+                startActivity(Intent(activity, ChronometerActivity::class.java))
+            }
+            R.id.life_cycle_btn -> {
+                startActivity(Intent(activity, LifeCycleActivity::class.java))
             }
 
         }
