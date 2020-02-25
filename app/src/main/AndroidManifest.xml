@@ -21,12 +21,13 @@
         </activity>
 
         <activity android:name=".ui.databind.DataBindingActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="unspecified"/>
 
         <activity android:name=".ui.chronometer.ChronometerActivity"/>
 
         <activity android:name=".ui.lifecycle.LifeCycleActivity"/>
         <activity android:name=".ui.vmsync.VmSyncActivity"/>
+        <activity android:name=".ui.navi.NavigationActivity"/>
     </application>
 
 </manifest>

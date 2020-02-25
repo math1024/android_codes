@@ -13,6 +13,7 @@ import com.android.lyc.databinding.MyBinding
 import com.android.lyc.ui.chronometer.ChronometerActivity
 import com.android.lyc.ui.databind.DataBindingActivity
 import com.android.lyc.ui.lifecycle.LifeCycleActivity
+import com.android.lyc.ui.navi.NavigationActivity
 import com.android.lyc.ui.vmsync.VmSyncActivity
 
 class MainFragment : Fragment(), View.OnClickListener {
@@ -36,6 +37,7 @@ class MainFragment : Fragment(), View.OnClickListener {
         binding.nextBtn = "LiveData ViewModel"
         binding.lifeCycleBtn.text = "Life Cycle"
         binding.syncViewModelBtn.text = "Sync ViewModel"
+        binding.navigationBtn.text = "Navigation"
         binding.onClickListener = this
         return binding.root
     }
@@ -57,6 +59,9 @@ class MainFragment : Fragment(), View.OnClickListener {
             }
             R.id.sync_view_model_btn -> {
                 startActivity(Intent(activity, VmSyncActivity::class.java))
+            }
+            R.id.navigation_btn -> {
+                startActivity(Intent(activity, NavigationActivity::class.java))
             }
 
         }

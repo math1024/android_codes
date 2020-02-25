@@ -82,7 +82,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/life_cycle_btn" />
 
-
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/navigation_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{onClickListener}"
+            android:textColor="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sync_view_model_btn" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
