@@ -11,12 +11,12 @@ import com.android.lyc.R
  * @author rosetta
  * @date 2020/02/25
  */
-class NaviHomeFragment : Fragment(){
+class NavigationSettingsFragment : Fragment(){
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.navigation_host_fragment, container, false)
+        return inflater.inflate(R.layout.settings_fragment, container, false)
     }
 }

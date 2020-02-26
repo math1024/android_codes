@@ -15,16 +15,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/navigation_1"
+        android:id="@+id/navigate_destination_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="navigate_destination_button"
         app:layout_constraintTop_toBottomOf="@id/navigation_title" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/navigation_2"
+        android:id="@+id/navigate_action_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/navigation_1" />
+        android:text="navigate_action_button"
+        app:layout_constraintTop_toBottomOf="@id/navigate_destination_button" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

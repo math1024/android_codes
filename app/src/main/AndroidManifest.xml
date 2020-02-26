@@ -27,7 +27,8 @@
 
         <activity android:name=".ui.lifecycle.LifeCycleActivity"/>
         <activity android:name=".ui.vmsync.VmSyncActivity"/>
-        <activity android:name=".ui.navi.NavigationActivity"/>
+        <activity android:name=".ui.navi.NavigationActivity"
+            android:theme="@style/AppThemeNoActionBar"/>
     </application>
 
 </manifest>
