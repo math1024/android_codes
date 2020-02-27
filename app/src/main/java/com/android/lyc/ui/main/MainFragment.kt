@@ -34,7 +34,8 @@ class MainFragment : Fragment(), View.OnClickListener {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.main_fragment, container, false)
         binding.setDataBindingBtn("Go DataBindingActivity")
-        binding.nextBtn = "LiveData ViewModel"
+        binding.nextBtn = "Chronometer"
+        binding.liveDataBtn.text = "live Data"
         binding.lifeCycleBtn.text = "Life Cycle"
         binding.syncViewModelBtn.text = "Sync ViewModel"
         binding.navigationBtn.text = "Navigation"

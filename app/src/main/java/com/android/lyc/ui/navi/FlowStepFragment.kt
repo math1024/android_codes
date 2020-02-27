@@ -35,7 +35,7 @@ class FlowStepFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<View>(R.id.next_button).setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.next_button)
+            Navigation.createNavigateOnClickListener(R.id.next_action)
         )
     }
 }

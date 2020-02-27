@@ -54,7 +54,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="@{onClickListener}"
-            android:text="@{nextBtn}"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimary"
             app:layout_constraintEnd_toEndOf="parent"
