@@ -30,7 +30,7 @@
         <activity android:name=".ui.vmsync.VmSyncActivity"/>
         <activity android:name=".ui.navi.NavigationActivity"
             android:theme="@style/AppThemeNoActionBar"/>
-
+        <activity android:name=".ui.paging.SearchRepoActivity"/>
         <receiver android:name=".ui.navi.NavigationDeepLinkProvider">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

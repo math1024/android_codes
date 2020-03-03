@@ -14,6 +14,7 @@ import com.android.lyc.ui.chronometer.ChronometerActivity
 import com.android.lyc.ui.databind.DataBindingActivity
 import com.android.lyc.ui.lifecycle.LifeCycleActivity
 import com.android.lyc.ui.navi.NavigationActivity
+import com.android.lyc.ui.paging.SearchRepoActivity
 import com.android.lyc.ui.vmsync.VmSyncActivity
 
 class MainFragment : Fragment(), View.OnClickListener {
@@ -34,11 +35,12 @@ class MainFragment : Fragment(), View.OnClickListener {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.main_fragment, container, false)
         binding.setDataBindingBtn("Go DataBindingActivity")
-        binding.nextBtn = "Chronometer"
-        binding.liveDataBtn.text = "live Data"
+        binding.nextBtn = "live Data"
+        binding.liveDataBtn.text = "Chronometer"
         binding.lifeCycleBtn.text = "Life Cycle"
         binding.syncViewModelBtn.text = "Sync ViewModel"
         binding.navigationBtn.text = "Navigation"
+        binding.pagingBtn.text = "Paging"
         binding.onClickListener = this
         return binding.root
     }
@@ -64,6 +66,7 @@ class MainFragment : Fragment(), View.OnClickListener {
             R.id.navigation_btn -> {
                 startActivity(Intent(activity, NavigationActivity::class.java))
             }
+            R.id.paging_btn -> startActivity(Intent(activity, SearchRepoActivity::class.java))
 
         }
     }
