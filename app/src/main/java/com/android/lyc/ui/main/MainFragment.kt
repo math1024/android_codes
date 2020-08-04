@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.android.lyc.R
 import com.android.lyc.databinding.MyBinding
+import com.android.lyc.ui.LongTextActivity
 import com.android.lyc.ui.chronometer.ChronometerActivity
 import com.android.lyc.ui.databind.DataBindingActivity
 import com.android.lyc.ui.lifecycle.LifeCycleActivity
@@ -41,6 +42,7 @@ class MainFragment : Fragment(), View.OnClickListener {
         binding.syncViewModelBtn.text = "Sync ViewModel"
         binding.navigationBtn.text = "Navigation"
         binding.pagingBtn.text = "Paging"
+        binding.longTextBtn.text = "Long Text"
         binding.onClickListener = this
         return binding.root
     }
@@ -67,6 +69,9 @@ class MainFragment : Fragment(), View.OnClickListener {
                 startActivity(Intent(activity, NavigationActivity::class.java))
             }
             R.id.paging_btn -> startActivity(Intent(activity, SearchRepoActivity::class.java))
+            R.id.long_text_btn -> {
+                startActivity(Intent(activity, LongTextActivity::class.java))
+            }
 
         }
     }
