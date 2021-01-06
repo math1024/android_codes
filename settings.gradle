@@ -1,3 +1,4 @@
+include ':quickdial'
 include ':app'
 rootProject.name='CodeSets'
 include ':graytheme'
