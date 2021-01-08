@@ -3,5 +3,8 @@
     android:id="@+id/name"
     android:layout_width="match_parent"
     android:gravity="center"
-
-    android:layout_height="wrap_content" />
+    android:textSize="28sp"
+    android:maxLines="2"
+    android:ellipsize="marquee"
+    android:textColor="@color/black"
+    android:layout_height="100dp" />
