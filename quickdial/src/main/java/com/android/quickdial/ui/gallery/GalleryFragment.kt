@@ -1,9 +1,12 @@
 package com.android.quickdial.ui.gallery
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -26,6 +29,12 @@ class GalleryFragment : Fragment() {
         galleryViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+
+        root.findViewById<Button>(R.id.add_dialer).setOnClickListener {
+             var intent =  Intent(Intent.ACTION_GET_CONTENT);
+            intent.type = ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE;
+           startActivityForResult(intent, 1);
+        }
         return root
     }
 }

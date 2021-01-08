@@ -13,6 +13,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.android.quickdial.ui.database.UserDatabase
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -41,6 +42,8 @@ class MainActivity : AppCompatActivity() {
             != PermissionChecker.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CALL_PHONE), 100)
         }
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
