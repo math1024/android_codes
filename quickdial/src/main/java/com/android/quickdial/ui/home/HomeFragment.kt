@@ -31,10 +31,10 @@ class HomeFragment : Fragment() {
         homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.dial_tips)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+//        val textView: TextView = root.findViewById(R.id.dial_tips)
+//        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+//            textView.text = it
+//        })
 
 
         viewManager = GridLayoutManager(activity, 2)
@@ -42,14 +42,12 @@ class HomeFragment : Fragment() {
         var datas = arrayOf("114", "1141", "1142","1143", "12345678909", "18522167325")
         viewAdapter = HomeAdapter(this.requireContext(), datas);
 
-        var divider = DividerItemDecoration(activity, DividerItemDecoration.HORIZONTAL)
-        divider.setDrawable(ColorDrawable(ContextCompat.getColor(requireContext(), R.color.black)))
-        recyclerView = root.findViewById<RecyclerView>(R.id.dial_list).apply {
-            setHasFixedSize(true)
-            layoutManager = viewManager
-            adapter = viewAdapter
-            divider = divider
-        }
+        var divider = GridItemDecoration(16, 2)
+        recyclerView = root.findViewById<RecyclerView>(R.id.dial_list) as RecyclerView
+
+        recyclerView.layoutManager = viewManager
+        recyclerView.adapter = viewAdapter
+        recyclerView.addItemDecoration(divider)
         return root
     }
 }
