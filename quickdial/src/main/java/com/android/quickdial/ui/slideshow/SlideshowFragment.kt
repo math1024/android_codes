@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.quickdial.R
-import com.android.quickdial.ui.database.User
+import com.android.quickdial.database.User
 
 
 class SlideshowFragment : Fragment() {

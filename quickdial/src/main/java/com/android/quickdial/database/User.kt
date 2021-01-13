@@ -1,4 +1,4 @@
-package com.android.quickdial.ui.database
+package com.android.quickdial.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

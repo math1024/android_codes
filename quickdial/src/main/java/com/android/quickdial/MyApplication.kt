@@ -1,8 +1,7 @@
 package com.android.quickdial
 
 import android.app.Application
-import com.android.quickdial.ui.database.User
-import com.android.quickdial.ui.database.UserDatabase
+import com.android.quickdial.database.UserDatabase
 
 /**
  * @author rosetta
