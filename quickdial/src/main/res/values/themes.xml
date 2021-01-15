@@ -21,5 +21,9 @@
 
     <style name="Theme.CodeSets.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="Theme.CodeSets.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Theme.CodeSets.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <style name="Theme.Design.Light.Pop" parent="Theme.Design.Light">
+        <item name="android:actionMenuTextAppearance">@style/popupMenuStyle</item>
+    </style>
 </resources>
