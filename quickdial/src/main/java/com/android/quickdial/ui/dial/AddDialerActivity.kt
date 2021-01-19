@@ -44,7 +44,7 @@ class AddDialerActivity : AppCompatActivity(), View.OnClickListener {
         val phone = edit_phone_et.text.toString()
         if (!TextUtils.isEmpty(name) || !TextUtils.isEmpty(phone)) {
             var user = User(name, phone)
-            UserDatabase.getInstance(this).userDao().insertUser(user);
+            UserDatabase.getDatabase(this).userDao().insertUser(user);
         }
     }
 

@@ -8,11 +8,11 @@ import androidx.room.PrimaryKey
  * @date 2021/01/08
  */
 
-@Entity
+@Entity(tableName = "users")
 data class User(
     var name: String,
     var phone: String
 ) {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     var id = 0
 }

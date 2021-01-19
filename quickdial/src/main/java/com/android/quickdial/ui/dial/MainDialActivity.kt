@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.quickdial.R
 import com.android.quickdial.database.User
+import com.android.quickdial.database.UserDatabase
 import com.android.quickdial.ui.home.GridItemDecoration
 
 class MainDialActivity : AppCompatActivity(){
@@ -32,6 +33,8 @@ class MainDialActivity : AppCompatActivity(){
         }
 
         initView()
+        var user = UserDatabase.getDatabase(this).userDao().findUser()
+        println("user ----- $user")
     }
 
     private fun initView() {
