@@ -23,7 +23,9 @@ import com.android.quickdial.database.User
 class UserAdapter(private val activity: Activity,
                   private val users: ArrayList<User>) : RecyclerView.Adapter<UserAdapter.VH>() {
 
-    var colors :Array<Int> = arrayOf(android.R.color.holo_blue_light
+    lateinit var userCallBack: UserCallBack
+
+    private var colors :Array<Int> = arrayOf(android.R.color.holo_blue_light
     , android.R.color.holo_green_light, android.R.color.holo_blue_bright,
         android.R.color.holo_orange_light, android.R.color.holo_red_light,
         android.R.color.holo_blue_light)
@@ -33,11 +35,13 @@ class UserAdapter(private val activity: Activity,
         var phoneTv: TextView? = null
         var addIv: ImageView? = null
         var cardView: CardView? = null
+        var editIv: ImageView?= null
         init {
             cardView = view.findViewById(R.id.dial_card_view) as CardView
             nameTv = view.findViewById<View>(R.id.name) as TextView
             addIv = view.findViewById<View>(R.id.dial_add) as ImageView
             phoneTv = view.findViewById<View>(R.id.phone) as TextView
+            editIv = view.findViewById<View>(R.id.dial_edit) as ImageView
         }
     }
 
@@ -52,19 +56,27 @@ class UserAdapter(private val activity: Activity,
             holder.addIv?.visibility = View.VISIBLE
             holder.nameTv?.visibility = View.GONE
             holder.phoneTv?.visibility = View.GONE
+            holder.editIv?.visibility = View.GONE
             holder.addIv?.setOnClickListener {
-                var intent = Intent(activity, AddDialerActivity::class.java)
-                activity.startActivity(intent)
+                if (userCallBack != null) {
+                    userCallBack.callback(-1)
+                }
             }
         } else {
             holder.addIv?.visibility = View.GONE
+            holder.editIv?.visibility = View.VISIBLE
             holder.nameTv?.visibility = View.VISIBLE
             holder.phoneTv?.visibility = View.VISIBLE
             holder.nameTv?.text = users[position].name
             holder.phoneTv?.text = users[position].phone
             holder.cardView?.setOnClickListener {
                 var intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:" + users[position].phone))
-                activity.startActivityForResult(intent, 1000);
+                activity.startActivity(intent)
+            }
+            holder.editIv?.setOnClickListener {
+                if (userCallBack != null) {
+                    userCallBack.callback(users[position].id)
+                }
             }
         }
 
@@ -73,5 +85,9 @@ class UserAdapter(private val activity: Activity,
 
     override fun getItemCount(): Int {
         return users.size
+    }
+
+    interface UserCallBack {
+        fun callback(userId: Int)
     }
 }

@@ -14,11 +14,14 @@ interface UserDao {
     val all: List<User?>?
 
 
-    @Query("SELECT * FROM users LIMIT 1")
-    fun findUser(): User?
+    @Query("SELECT * FROM users WHERE id= :userId")
+    fun findUser(userId: Int): User?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertUser(user: User)
+
+    @Update
+    fun updateUser(user: User)
 
     @Delete
     fun delete(vararg users: User?)
