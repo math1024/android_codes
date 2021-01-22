@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.quickdial.R
 import com.android.quickdial.database.User
 import com.android.quickdial.database.UserDatabase
+import com.umeng.analytics.MobclickAgent
 import kotlinx.android.synthetic.main.activity_add_dialer.*
 
 class AddDialerActivity : AppCompatActivity(), View.OnClickListener {
@@ -124,5 +125,15 @@ class AddDialerActivity : AppCompatActivity(), View.OnClickListener {
             edit_name_et?.setText(name, TextView.BufferType.EDITABLE);
             edit_phone_et?.setText(number, TextView.BufferType.EDITABLE);
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        MobclickAgent.onResume(this)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        MobclickAgent.onPause(this)
     }
 }

@@ -12,6 +12,7 @@ import com.android.quickdial.R
 import com.android.quickdial.database.User
 import com.android.quickdial.database.UserDatabase
 import com.android.quickdial.ui.home.GridItemDecoration
+import com.umeng.analytics.MobclickAgent
 
 class MainDialActivity : AppCompatActivity(), UserAdapter.UserCallBack {
     private lateinit var recyclerView: RecyclerView
@@ -23,12 +24,18 @@ class MainDialActivity : AppCompatActivity(), UserAdapter.UserCallBack {
         if (PermissionChecker.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
             != PermissionChecker.PERMISSION_GRANTED ||
             PermissionChecker.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
+            != PermissionChecker.PERMISSION_GRANTED ||
+            PermissionChecker.checkSelfPermission(this, Manifest.permission.INTERNET)
+            != PermissionChecker.PERMISSION_GRANTED ||
+            PermissionChecker.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
             != PermissionChecker.PERMISSION_GRANTED
         ) {
             ActivityCompat.requestPermissions(
                 this, arrayOf(
                     Manifest.permission.CALL_PHONE,
-                    Manifest.permission.READ_CONTACTS
+                    Manifest.permission.READ_CONTACTS,
+                    Manifest.permission.READ_PHONE_STATE,
+                    Manifest.permission.INTERNET
                 ), 100
             )
         }
@@ -76,5 +83,15 @@ class MainDialActivity : AppCompatActivity(), UserAdapter.UserCallBack {
         var intent = Intent(this, AddDialerActivity::class.java)
         intent.putExtra(AddDialerActivity.USER_ID, userId)
         startActivityForResult(intent, 1000);
+    }
+
+    override fun onResume() {
+        super.onResume()
+        MobclickAgent.onResume(this)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        MobclickAgent.onPause(this)
     }
 }
