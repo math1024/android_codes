@@ -14,9 +14,9 @@ class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        UMConfigure.preInit(this, "600a80926a2a470e8f86e922", "dev")
+        UMConfigure.preInit(this, "XXXXX", "dev")
         UMConfigure.setLogEnabled(true);
         UserDatabase.getDatabase(this)
-        UMConfigure.init(this, "600a80926a2a470e8f86e922", "dev", 1, "dev_push")
+        UMConfigure.init(this, "XXXXX", "dev", 1, "dev_push")
     }
 }
