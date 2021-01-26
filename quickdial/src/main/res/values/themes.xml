@@ -26,4 +26,11 @@
     <style name="Theme.Design.Light.Pop" parent="Theme.Design.Light">
         <item name="android:actionMenuTextAppearance">@style/popupMenuStyle</item>
     </style>
+
+
+    <style name="MyTheme" parent="Theme.Design.Light">
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
 </resources>
