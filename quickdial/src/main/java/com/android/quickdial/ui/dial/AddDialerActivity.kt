@@ -10,9 +10,11 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.android.quickdial.R
 import com.android.quickdial.database.User
 import com.android.quickdial.database.UserDatabase
+import com.jaeger.library.StatusBarUtil
 import com.umeng.analytics.MobclickAgent
 import kotlinx.android.synthetic.main.activity_add_dialer.*
 
@@ -27,7 +29,6 @@ class AddDialerActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_dialer)
         setTitle(R.string.contact_detail)
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         initView()
 

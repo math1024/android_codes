@@ -18,7 +18,7 @@ android {
 
     defaultConfig {
         applicationId "com.android.quickdial"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -69,6 +69,8 @@ dependencies {
 
     implementation  'com.umeng.umsdk:common:9.3.3'
     implementation  'com.umeng.umsdk:asms:1.1.4'
+
+    implementation 'com.jaeger.statusbarutil:library:1.5.1'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

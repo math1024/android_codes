@@ -54,7 +54,7 @@ class MainDialActivity : AppCompatActivity(), UserAdapter.UserCallBack {
         }
 
         val size = arrayList.size
-        for (index in 1..(6 - size)) {
+        for (index in 1..(8 - size)) {
             var user = User("", "phone$index")
             arrayList.add(user)
         }

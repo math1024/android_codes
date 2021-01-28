@@ -80,7 +80,7 @@ class UserAdapter(private val activity: Activity,
             }
         }
 
-        holder.cardView?.setCardBackgroundColor(getColor(activity, colors[position]))
+        holder.cardView?.setCardBackgroundColor(getColor(activity, colors[position % 6]))
     }
 
     override fun getItemCount(): Int {
